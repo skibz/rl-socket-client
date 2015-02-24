@@ -1,0 +1,17 @@
+{
+  "name": "rl-socket-client",
+  "version": "0.0.1",
+  "description": "A net.Socket and Readline wrapper for applications needing TTY socket handling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ant Cosentino <ant@io.co.za>",
+  "license": "Unlicense",
+  "devDependencies": {
+    "coffee-script": "^1.9.1"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/coffee -c lib/index.coffee"
+  }
+}
