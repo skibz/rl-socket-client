@@ -16,4 +16,15 @@ new rlsc({
     lineEnding: '\n',
     autoConnect: true
 });
+
+// or
+
+var client = new rlsc({
+    host: '192.168.128.100',
+    port: 1829
+}).connect();
+
+client.on('connected', function() {
+    client.write('blah blah...');
+});
 ```
