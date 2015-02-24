@@ -1,6 +1,6 @@
-# rl-socket-client, the readline socket client
+### rl-socket-client: the readline socket client
 
-we ought to just pretend it stands for [rocketlauncher](http://ioquake3.org/wp/wp-content/themes/ioq3-deboy/explodedView.png)-socket-client. that's way cooler, right?
+we ought to just pretend it stands for `[rocketlauncher](http://ioquake3.org/wp/wp-content/themes/ioq3-deboy/explodedView.png)-socket-client`. that's way cooler, right?
 
 this module was designed for applications requiring a tty context along-side a tcp socket context (a tcp chat client, for instance)
 
