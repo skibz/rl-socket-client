@@ -18,7 +18,7 @@
     "postinstall": "npm run build"
   },
   "author": "Ant Cosentino <ant@io.co.za>",
-  "license": "MIT",
+  "license": "MIT license",
   "devDependencies": {
     "coffee-script": "^1.9.1"
   },
