@@ -3,6 +3,15 @@
   "version": "0.0.2",
   "description": "A net.Socket and Readline wrapper for applications needing TTY socket handling.",
   "main": "index.js",
+  "keywords": [
+    "net",
+    "net.Socket",
+    "socket",
+    "readline",
+    "rocketlauncher",
+    "tty",
+    "prompt"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
