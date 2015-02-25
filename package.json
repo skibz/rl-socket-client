@@ -1,6 +1,6 @@
 {
   "name": "rl-socket-client",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "the readline socket client",
   "main": "lib/index.js",
   "keywords": [
