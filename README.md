@@ -20,7 +20,7 @@ new rlsc({
     port: 1829,
     prompt: '% ',
     lineEnding: '\n',
-    autoConnect: true,
+    connect: true,
     completions: ['ls', 'pwd', 'cat', 'echo']
 });
 
