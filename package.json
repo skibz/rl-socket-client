@@ -15,7 +15,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "node_modules/.bin/coffeelint lib/*.coffee",
-    "build": "mv lib src && coffee -o lib -c src",
+    "build": "mv lib src && coffee --no-header -o lib -c src",
     "unbuild": "rm -rf lib && mv src lib",
     "release": "npm run build && npm publish . && npm run unbuild"
   },
