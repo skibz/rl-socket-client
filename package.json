@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "mkdir -p src && ./node_modules/.bin/coffee -c lib/index.coffee && mv lib/index.js src",
+    "build": "mkdir -p ./src && ./node_modules/.bin/coffee -c ./lib/index.coffee && mv ./lib/index.js ./src",
     "postinstall": "npm run build"
   },
   "author": "Ant Cosentino <ant@io.co.za>",
