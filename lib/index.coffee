@@ -11,7 +11,7 @@ module.exports = class RLSocketClient extends EventEmitter
     
     unless opts and opts.host and opts.port
       throw new Error('A socket host and port are required.')
-    
+
     @host = opts.host ? null
     @port = opts.port ? null
     @prompt = opts.prompt ? '> '
@@ -72,6 +72,9 @@ module.exports = class RLSocketClient extends EventEmitter
       return @
     )
 
+  
+  # write the given text to the socket
+  # and append it to the terminal prompt.
   write: (text) =>
     console.log(text)
     socket.write("#{text}#{@lineEnding}")
