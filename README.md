@@ -6,9 +6,9 @@ this module was designed for applications requiring a tty context along-side a t
 
 ##### api
 
-`#connect()`: initiate a connection to the given `host` and `port`
-`#on(event)`: currently the only event emitted is `connected`
-`#write(text)`: programmatically send `text` over the wire
+- `#connect()`: initiate a connection to the given `host` and `port`
+- `#on(event)`: currently the only event emitted is `connected`
+- `#write(text)`: programmatically send `text` over the wire
 
 ##### usage
 
