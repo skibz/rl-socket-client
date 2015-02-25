@@ -8,15 +8,16 @@ module.exports = class RLSocketClient extends EventEmitter
   socket = null
   
   constructor: (opts) ->
+    
+    unless opts and opts.host and opts.port
+      throw new Error('A socket host and port are required.')
+    
     @host = opts.host ? null
     @port = opts.port ? null
     @prompt = opts.prompt ? '> '
     @lineEnding = opts.lineEnding ? '\r\n'
     @completions = opts.completions ? []
     @autoConnect = opts.connect ? false
-
-    unless @host and @port
-      throw new Error('A socket host and port are required.')
 
     socket = new net.Socket()
     socket.setNoDelay(true)
