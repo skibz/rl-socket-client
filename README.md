@@ -2,7 +2,13 @@
 
 we ought to just pretend it stands for [rocketlauncher](http://ioquake3.org/wp/wp-content/themes/ioq3-deboy/explodedView.png)-socket-client. that's way cooler, right?
 
-this module was designed for applications requiring a tty context along-side a tcp socket context (a tcp chat client, for instance)
+this module was designed for applications requiring a tty context along-side a tcp socket context (a tcp chat client, for instance) it provides a custom prompt, line ending value and tab-completion command list.
+
+##### api
+
+`#connect()`: initiate a connection to the given `host` and `port`
+`#on(event)`: currently the only event emitted is `connected`
+`#write(text)`: programmatically send `text` over the wire
 
 ##### usage
 
