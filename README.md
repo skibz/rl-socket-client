@@ -1,6 +1,6 @@
 ### rl-socket-client: the readline socket client
 
-[![NPM](https://nodei.co/npm/rl-socket-client.png?compact=true)](https://nodei.co/npm/rl-socket-client/)
+[![NPM](https://nodei.co/npm/rl-socket-client.png?mini=true)](https://nodei.co/npm/rl-socket-client/)
 [![Build Status](https://travis-ci.org/io-digital/rl-socket-client.svg)](https://travis-ci.org/io-digital/rl-socket-client)
 [![Coverage Status](https://coveralls.io/repos/io-digital/rl-socket-client/badge.svg)](https://coveralls.io/r/io-digital/rl-socket-client)
 
