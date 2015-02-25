@@ -1,13 +1,13 @@
 {
   "name": "rl-socket-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A net.Socket and Readline wrapper for applications needing TTY socket handling.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ant Cosentino <ant@io.co.za>",
-  "license": "Unlicense",
+  "license": "MIT",
   "devDependencies": {
     "coffee-script": "^1.9.1"
   },
