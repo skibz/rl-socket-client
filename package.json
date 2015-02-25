@@ -1,6 +1,6 @@
 {
   "name": "rl-socket-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A net.Socket and Readline wrapper for applications needing TTY socket handling.",
   "main": "index.js",
   "keywords": [
