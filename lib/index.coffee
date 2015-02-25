@@ -57,11 +57,13 @@ module.exports = class RLSocketClient extends EventEmitter
 
   connect: =>
     socket.connect @port, @host, =>
+      process.nextTick =>
+        @emit('connected')
       console.log('ESTABLISHED CONNECTION to %s:%d', @host, @port)
       rl.prompt()
-      @emit('connected')
       return @
 
   write: (text) =>
+    console.log(text)
     socket.write("#{text}#{@lineEnding}")
     return @
