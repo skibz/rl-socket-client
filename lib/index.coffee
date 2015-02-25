@@ -4,41 +4,29 @@ readline = require('readline')
 
 module.exports = class RLSocketClient extends EventEmitter
 
+  rl = null
   socket = new net.Socket()
   socket.setNoDelay(true)
 
-  socket
-    .on 'lookup', (err, address, family) ->
-      console.error(err) if (err)
-      console.log('SOCKET HOST ADDRESS LOOKUP')
-      console.log('HOST ADDRESS', address)
-      console.log('HOST FAMILY', family)
-    .on 'data', (data) ->
-      console.log(data.toString())
-      rl.prompt()
-    .on 'timeout', ->
-      console.log('CONNECTION TIMEOUT')
-      socket.end()
-    .on 'error', (err) ->
-      console.error('CONNECTION ERROR', err)
-      socket.destroy()
-    .on 'end', ->
-      console.log('CONNECTION CLOSED')
-
-  rl = readline.createInterface(
-    input: process.stdin
-    output: process.stdout
-  )
-  
   constructor: (opts) ->
     @host = opts.host ? null
     @port = opts.port ? null
     @prompt = opts.prompt ? '> '
     @lineEnding = opts.lineEnding ? '\r\n'
+    @completions = opts.completions ? []
     @autoConnect = opts.autoConnect ? false
 
     unless @host and @port
       throw new Error('A socket host and port are required.')
+
+    rl = readline.createInterface(
+      input: process.stdin
+      output: process.stdout
+      completer: (line) =>
+        hits = @completions.filter (cmd) -> cmd.indexOf(line) is 0
+        return [hits, line] if hits.length
+        return [@completions, line]
+    )
 
     rl.setPrompt(@prompt)
 
@@ -52,6 +40,24 @@ module.exports = class RLSocketClient extends EventEmitter
         rl.prompt()
       .on 'line', (text) =>
         socket.write("#{text}#{@lineEnding}")
+
+    socket
+      .on 'lookup', (err, address, family) ->
+        console.error(err) if (err)
+        console.log('SOCKET HOST ADDRESS LOOKUP')
+        console.log('HOST ADDRESS', address)
+        console.log('HOST FAMILY', family)
+      .on 'data', (data) ->
+        console.log(data.toString())
+        rl.prompt()
+      .on 'timeout', ->
+        console.log('CONNECTION TIMEOUT')
+        socket.end()
+      .on 'error', (err) ->
+        console.error('CONNECTION ERROR', err)
+        socket.destroy()
+      .on 'end', ->
+        console.log('CONNECTION CLOSED')
 
     @connect() if @autoConnect
 
