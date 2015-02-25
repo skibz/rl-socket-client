@@ -1,6 +1,6 @@
 {
   "name": "rl-socket-client",
-  "version": "0.1.6",
+  "version": "0.1.0",
   "description": "a basic tty interface for socket programs",
   "main": "lib/index.js",
   "keywords": [
